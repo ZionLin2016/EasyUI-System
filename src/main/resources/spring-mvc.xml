@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:c="http://www.springframework.org/schema/c" xmlns:cache="http://www.springframework.org/schema/cache" xmlns:context="http://www.springframework.org/schema/context" xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p" xmlns:task="http://www.springframework.org/schema/task" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- 自动扫描controller包下的所有类，使其认为spring mvc的控制器 -->
+	<context:component-scan base-package="lsd.controller" />
+
+	<!-- Spring MVC JSON配置 -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<!-- <bean id="fastJsonHttpMessageConverter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter"> -->
+				<bean id="fastJsonHttpMessageConverter" class="lsd.util.FastJsonHttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/html;charset=UTF-8</value><!-- 避免IE出现下载JSON文件的情况 -->
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/" p:suffix=".jsp" />
+
+	<!-- 文件上传配置 -->
+	<!-- <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> <property name="defaultEncoding"> <value>UTF-8</value> </property> <property name="maxUploadSize"> <value>32505856</value> </property> <property name="maxInMemorySize"> <value>4096</value> </property> </bean> -->
+
+	<!-- 拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="lsd.interceptors.SecurityInterceptor">
+				<!-- 不需要权限验证的地址 -->
+				<property name="excludeUrls">
+					<list>
+						<value>/initController/init</value><!-- 初始化数据库 -->
+						<value>/resourceController/tree</value><!-- 首页左侧功能菜单 -->
+						<value>/userController/reg</value><!-- 用户注册 -->
+						<value>/userController/login</value><!-- 用户登录 -->
+						<value>/userController/loginCombobox</value><!-- 用户登录里面的autocomplete功能 -->
+						<value>/userController/loginCombogrid</value><!-- 用户登录里面的combogrid功能 -->
+						<value>/userController/logout</value><!-- 注销登录 -->
+						<value>/resourceController/allTree</value><!-- 角色访问资源下拉树 -->
+						<value>/roleController/tree</value><!-- 用户访问角色树(只能看到自己拥有的角色) -->
+						<value>/roleController/allTree</value><!-- 用户访问角色树 -->
+						<value>/userController/editCurrentUserPwdPage</value><!-- 用户修改自己的密码页面 -->
+						<value>/userController/editCurrentUserPwd</value><!-- 用户修改自己的密码 -->
+						<value>/userController/currentUserRolePage</value><!-- 查看自己的角色页面 -->
+						<value>/userController/currentUserResourcePage</value><!-- 查看自己的权限页面 -->
+					</list>
+				</property>
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+</beans>
