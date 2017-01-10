@@ -110,7 +110,9 @@
 	<jsp:include page="user/reg.jsp"></jsp:include>
 
 	<div id="index_layout">
-		<div data-options="region:'north',href:'${pageContext.request.contextPath}/layout/north.jsp'" style="height: 70px; overflow: hidden;" class="logo"></div>
+		<div data-options="region:'north', href:'${pageContext.request.contextPath}/layout/north.jsp'"  split="true" border="false" style="overflow: hidden; height: 35px;" class="logo">
+			
+		</div>
 		<div data-options="region:'west',href:'${pageContext.request.contextPath}/layout/west.jsp',split:true" title="模块导航" style="width: 200px; overflow: hidden;"></div>
 		<div data-options="region:'center'" title="欢迎使用本系统" style="overflow: hidden;">
 			<div id="index_tabs" style="overflow: hidden;">

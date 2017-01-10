@@ -172,7 +172,7 @@
 	</div>
 </div>
 
-<div id="defaultUserInfoDialog" title="系统测试账号" style="width: 300px; height: 260px; overflow: hidden; display: none;">
+<div id="defaultUserInfoDialog" title="系统测试账号" style="width: 300px; height: 200px; overflow: hidden; display: none;">
 	<div class="well well-small" style="margin: 3px;">
 		<div>
 			<span class="badge">1</span>超管：lsd/123
