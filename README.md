@@ -1,5 +1,7 @@
 # EasyUI-System
-=====================================================
+======================================================================
+
+## 项目描述
 Spring4 + Spring mvc + Hibernate4 + Maven + EasyUI + 少量Bootstrap的后台权限管理系统<br/>
 这是一个基础框架，内部已经实现了泛型的增删改查、预先抓取(可以抓取多级对象)、动态条件查询(QueryFilter)等功能<br/>
 具体请运行起来，并查看index.jsp示例索引<br/>
@@ -27,7 +29,7 @@ Spring4 + Spring mvc + Hibernate4 + Maven + EasyUI + 少量Bootstrap的后台权
 >> 待完善<br/>
   
 
-1.	项目描述
+1.	
 2.	框架特点
 框架使用主流的Spring MVC+Hibernate4整合，基于注解的配置，基本框架都已配置完毕，不需要更改任何XML文件；
 框架抽象了BaseDao/BaseService/BaseAction的功能，程序员开发一套增删改查，不需要编写大量代码，建立几个空的接口和实现类，其他全由Base包下的功能实现；
