@@ -27,3 +27,7 @@ Spring4 + Spring mvc + Hibernate4 + Maven + EasyUI + 少量Bootstrap的后台权
 + 编写Dao接口和DaoImpl实现(注意继承BaseDao和实现BaseDaoImpl，并且要增加@Repository注解)
 + 编写Service接口和ServiceImpl实现(注意继承BaseService和实现BaseServiceImpl，并且要增加@Service的注解，里面需要注入你自己的dao)
 + 编写Controller(注意添加@Controller，便于程序自动扫描为控制器)
+
+----------------------------------------------------------
+### 界面截图
+![image](https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg)
