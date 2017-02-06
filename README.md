@@ -30,4 +30,4 @@ Spring4 + Spring mvc + Hibernate4 + Maven + EasyUI + 少量Bootstrap的后台权
 
 ----------------------------------------------------------
 ### 界面截图
-![image](https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg)
+![image](https://github.com/ZionLin2016/EasyUI-System/raw/master/readme-image/snipaste20170206_221811.png)
