@@ -8,7 +8,6 @@
 
 	<!-- maven依赖包的书写是有顺序的，请不要更改下面dependency的顺序，避免造成JAR包冲突 -->
 	<dependencies>
-	
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -186,40 +185,6 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>4.2.7.SP1</version>
 		</dependency>
-
-		<!--&lt;!&ndash; 加入struts2依赖包 &ndash;&gt;-->
-		<!--<dependency>-->
-			<!--<groupId>org.apache.struts</groupId>-->
-			<!--<artifactId>struts2-core</artifactId>-->
-			<!--<version>2.3.15.3</version>-->
-			<!--<exclusions>-->
-				<!--&lt;!&ndash; 由于hibernate里面已经包含了javassist包，跟struts2的javassist冲突，所以struts2要排除这个引用 &ndash;&gt;-->
-				<!--<exclusion>-->
-					<!--<groupId>javassist</groupId>-->
-					<!--<artifactId>javassist</artifactId>-->
-				<!--</exclusion>-->
-			<!--</exclusions>-->
-		<!--</dependency>-->
-		<!--&lt;!&ndash; struts2整合spring插件 &ndash;&gt;-->
-		<!--<dependency>-->
-			<!--<groupId>org.apache.struts</groupId>-->
-			<!--<artifactId>struts2-spring-plugin</artifactId>-->
-			<!--<version>2.3.15.3</version>-->
-		<!--</dependency>-->
-		<!--&lt;!&ndash; struts2注解插件 &ndash;&gt;-->
-		<!--<dependency>-->
-			<!--<groupId>org.apache.struts</groupId>-->
-			<!--<artifactId>struts2-convention-plugin</artifactId>-->
-			<!--<version>2.3.15.3</version>-->
-		<!--</dependency>-->
-		<!--&lt;!&ndash; 可以看到struts2应用里的Action等各种资源的影射情况 &ndash;&gt;-->
-		<!--&lt;!&ndash; 可以使用类似http://localhost:9999/sshe/config-browser/showConstants.sy的url来访问 &ndash;&gt;-->
-		<!--<dependency>-->
-			<!--<groupId>org.apache.struts</groupId>-->
-			<!--<artifactId>struts2-config-browser-plugin</artifactId>-->
-			<!--<version>2.3.15.3</version>-->
-		<!--</dependency>-->
-		
 	</dependencies>
 
 	<build>
@@ -250,6 +215,7 @@
 					</archive>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 </project>
